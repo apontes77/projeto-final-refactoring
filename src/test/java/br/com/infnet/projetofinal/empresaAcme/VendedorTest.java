@@ -40,9 +40,9 @@ public class VendedorTest {
     public void deveVerificarValorInvalidoParaOBonusDoVendedor() {
 
         funcionario.setTempoDeServicoEMAnos(0L);
-        Mockito.when(vendedor.calculaBonusVendedor()).thenThrow(RuntimeException.class);
+        Mockito.when(vendedor.calculaBonus()).thenThrow(RuntimeException.class);
 
-        assertThrows(RuntimeException.class, () -> vendedor.calculaBonusVendedor());
+        assertThrows(RuntimeException.class, () -> vendedor.calculaBonus());
 
     }
 

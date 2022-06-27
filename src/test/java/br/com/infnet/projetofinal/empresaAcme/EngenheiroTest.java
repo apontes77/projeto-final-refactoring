@@ -1,7 +1,6 @@
 package br.com.infnet.projetofinal.empresaAcme;
 
 
-import br.com.infnet.projetofinal.empresaAcme.Engenheiro;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -34,11 +33,9 @@ public class EngenheiroTest {
     @DisplayName("engenheiro pode trabalhar no exterior")
     public void podeTrabalharNoExterior() {
 
-        Mockito.when(engenheiro.verificaQualificacoesParaTrabalhoFora(true, 8, true, 8,
-                true, true)).thenReturn(1);
+        Mockito.when(engenheiro.verificaQualificacoesParaTrabalhoFora()).thenReturn(1);
 
-        Integer qualificacaoParaTrabalhoExterior = engenheiro.verificaQualificacoesParaTrabalhoFora(true, 8, true, 8,
-                true, true);
+        Integer qualificacaoParaTrabalhoExterior = engenheiro.verificaQualificacoesParaTrabalhoFora();
 
         assertEquals(qualificacaoParaTrabalhoExterior, 1);
     }
@@ -46,11 +43,9 @@ public class EngenheiroTest {
     @Test
     @DisplayName("engenheiro não pode trabalhar no exterior")
     public void naoPodeTrabalharNoExterior() {
-        Mockito.when(engenheiro.verificaQualificacoesParaTrabalhoFora(true, 8, true, 8,
-                true, false)).thenReturn(-1);
+        Mockito.when(engenheiro.verificaQualificacoesParaTrabalhoFora()).thenReturn(-1);
 
-        Integer qualificacaoParaTrabalhoExterior = engenheiro.verificaQualificacoesParaTrabalhoFora(true, 8, true, 8,
-                true, false);
+        Integer qualificacaoParaTrabalhoExterior = engenheiro.verificaQualificacoesParaTrabalhoFora();
 
         assertEquals(qualificacaoParaTrabalhoExterior, -1);
     }

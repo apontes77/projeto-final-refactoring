@@ -1,30 +1,21 @@
 package br.com.infnet.projetofinal.empresaAcme;
 
+import br.com.infnet.projetofinal.empresaAcme.enums.TipoSanguineo;
+
 public abstract class Funcionario {
-    public static final int O = 1;
-    public static final int A = 2;
-    public static final int B = 3;
-    public static final int AB = 4;
-
-    public int grupoSanguineo;
-
-    public Funcionario(int grupoSanguineo) {
-        this.grupoSanguineo = grupoSanguineo;
-    }
-
+    private TipoSanguineo tipoSanguineo;
     private String id;
     private String nome;
     private String sobrenome;
     private Long tempoDeServicoEMAnos;
 
-    public String logradouro;
-    public String cidade;
-    public String numero;
-    public String cep;
-    public String bairro;
-
-
     public String numeroConselho;
+
+    private Endereco endereco;
+
+    public Funcionario(TipoSanguineo tipoSanguineo) {
+        this.tipoSanguineo = tipoSanguineo;
+    }
 
     public Long getTempoDeServicoEMAnos() {
         return tempoDeServicoEMAnos;
@@ -38,26 +29,15 @@ public abstract class Funcionario {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getSobrenome() {
         return sobrenome;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-    public abstract Double calculaBonusEngenheiro();
+    public abstract Double calculaBonus();
 
     public abstract String getNumeroConselho();
 }
