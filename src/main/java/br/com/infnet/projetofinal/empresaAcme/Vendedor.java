@@ -20,6 +20,13 @@ public class Vendedor extends Funcionario{
         return 0.0;
     }
 
+    public Double calculaBonusVendedor() {
+        if(getTempoDeServicoEMAnos() <= 0) {
+            throw new RuntimeException("Vendedor sem tempo de casa suficiente para ter direito a bônus.");
+        }
+        return getTempoDeServicoEMAnos()*4.5;
+    }
+
     @Override
     public String getNumeroConselho() {
         return null;

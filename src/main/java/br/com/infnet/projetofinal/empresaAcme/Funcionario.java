@@ -1,6 +1,6 @@
 package br.com.infnet.projetofinal.empresaAcme;
 
-abstract class Funcionario {
+public abstract class Funcionario {
     public static final int O = 1;
     public static final int A = 2;
     public static final int B = 3;
